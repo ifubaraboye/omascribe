@@ -18,7 +18,7 @@ Built for `oribi.windscribe`, adapted from the [omarchy IVPN plugin](https://git
 
 ```sh
 # clone the plugin into your omarchy plugins folder
-git clone https://github.com/ifubaraboye/omarchy-windscribe-plugin.git \
+git clone https://github.com/ifubaraboye/omascribe.git \
   ~/.config/omarchy/plugins/oribi.windscribe
 
 # validate and enable it
