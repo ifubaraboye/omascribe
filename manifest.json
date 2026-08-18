@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "oribi.windscribe",
+  "name": "Windscribe",
+  "version": "1.0.0",
+  "author": "oribi",
+  "license": "MIT",
+  "description": "Connect, disconnect and pick a server for Windscribe from the Omarchy bar.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Windscribe",
+    "description": "Toggle the Windscribe tunnel, switch servers, and control the firewall.",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 5,
+      "protocol": "WireGuard",
+      "publicIpLookup": false
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "description": "How often 'windscribe-cli status' is polled.",
+        "min": 2,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 5
+      },
+      {
+        "key": "protocol",
+        "type": "enum",
+        "label": "Protocol",
+        "description": "Which protocol to connect with.",
+        "options": [
+          "WireGuard",
+          "UDP",
+          "TCP",
+          "Stealth"
+        ],
+        "defaultValue": "WireGuard"
+      },
+      {
+        "key": "publicIpLookup",
+        "type": "boolean",
+        "label": "Look up public IP",
+        "description": "Ask ipinfo.io for your public address so the map can show your real location and ISP. Off by default.",
+        "defaultValue": false
+      }
+    ]
+  }
+}
